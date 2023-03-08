@@ -1,3 +1,38 @@
+services:
+  - type: web
+    name: music-library
+    env: node
+    scaling:
+      minInstances: 1
+      maxInstances: 1
+    region: frankfurt
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: PGDATABASE
+        fromDatabase:
+          name: production
+          property: database
+      - key: PGUSER
+        fromDatabase:
+          name: production
+          property: user
+      - key: PGPASSWORD
+        fromDatabase:
+          name: production
+          property: password
+      - key: PGHOST
+        fromDatabase:
+          name: production
+          property: host
+      - key: PGPORT
+        fromDatabase:
+          name: production
+          property: port
+
+
+
 databases:
   - name: production
     databaseName: music_library
