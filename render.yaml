@@ -1,5 +1,6 @@
 databases:
   - name: production
+    databaseName: music_library
     region: frankfurt
     plan: free
     ipAllowList: []
