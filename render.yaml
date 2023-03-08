@@ -1,4 +1,5 @@
 databases:
   - name: production
     region: frankfurt
+    plan: free
     ipAllowList: []
