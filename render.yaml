@@ -2,9 +2,6 @@ services:
   - type: web
     name: music-library
     env: node
-    scaling:
-      minInstances: 1
-      maxInstances: 1
     region: frankfurt
     plan: free
     buildCommand: npm ci
